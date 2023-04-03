@@ -15,3 +15,9 @@ resource "aws_lambda_function" "serverless-api" {
   handler       = var.handler
   runtime       = "nodejs16.x"
 }
+
+module "labels" {
+  source      = "cloudposse/label/null"
+
+  context = var.context
+}
