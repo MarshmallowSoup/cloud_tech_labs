@@ -11,7 +11,9 @@ No requirements.
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_labels"></a> [labels](#module\_labels) | cloudposse/label/null | n/a |
 
 ## Resources
 
@@ -26,6 +28,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_context"></a> [context](#input\_context) | Label module context | `any` | n/a | yes |
 | <a name="input_function_name"></a> [function\_name](#input\_function\_name) | Name of Lambda function | `string` | n/a | yes |
 | <a name="input_handler"></a> [handler](#input\_handler) | Function entrypoint in your code. | `string` | `""` | no |
 | <a name="input_lambda_zip"></a> [lambda\_zip](#input\_lambda\_zip) | Path to the function's deployment package within the local filesystem | `any` | n/a | yes |
