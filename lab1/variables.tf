@@ -1,11 +1,14 @@
 variable "namespace" {
-  type = string
+  type    = string
+  default = "cloud_tech"
 }
 
 variable "delimiter" {
-  type = string
+  type    = string
+  default = "-"
 }
 
 variable "environment" {
-  type = string
+  type    = string
+  default = "lab1"
 }
