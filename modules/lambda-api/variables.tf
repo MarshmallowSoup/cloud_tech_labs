@@ -15,3 +15,9 @@ variable "handler" {
 variable "context" {
   description = "Label module context"
 }
+
+variable "env_var" {
+  default = {}
+  description = "Map of environment variables that are accessible from the function code during execution. If provided at least one key must be present."
+  type = map(string)
+}
