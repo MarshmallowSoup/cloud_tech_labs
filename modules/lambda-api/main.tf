@@ -14,6 +14,10 @@ resource "aws_lambda_function" "serverless-api" {
   role          = aws_iam_role.lambda_role.arn
   handler       = var.handler
   runtime       = "nodejs16.x"
+
+  environment {
+    variables = var.env_var
+  }
 }
 
 module "labels" {
