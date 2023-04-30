@@ -3,7 +3,6 @@ module "authors_table" {
 
   table_name = "Authors"
   context    = module.naming.context
-  context    = module.naming.context
 }
 
 module "courses_table" {
