@@ -1,5 +1,5 @@
 module "labels" {
-  source      = "cloudposse/label/null"
+  source = "cloudposse/label/null"
 
   context = var.context
 }

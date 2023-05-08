@@ -19,15 +19,14 @@ module "authors_lambda" {
   handler       = "index.handler"
   lambda_zip    = "${path.module}/code.zip"
   context       = module.naming.context
+  table_arn     = module.authors_table.table_arn
 
   env_var = {
     TABLE_NAME = module.authors_table.table_name
   }
-}
 
-resource "aws_iam_role_policy_attachment" "authors-lambda-attach" {
-  role       = module.authors_lambda.role_arn
-  policy_arn = "arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess"
+  depends_on = [ null_resource.create_lambda ]
+
 }
 
 module "courses_lambda" {
@@ -37,15 +36,14 @@ module "courses_lambda" {
   handler       = "index.handler"
   lambda_zip    = "${path.module}/code.zip"
   context       = module.naming.context
+  table_arn     = module.courses_table.table_arn
 
   env_var = {
     TABLE_NAME = module.courses_table.table_name
   }
-}
 
-resource "aws_iam_role_policy_attachment" "courses-lambda-attach" {
-  role       = module.courses_lambda.role_arn
-  policy_arn = "arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess"
+  depends_on = [ null_resource.create_lambda ]
+  
 }
 
 resource "null_resource" "create_lambda" {

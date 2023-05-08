@@ -7,6 +7,7 @@ for d in */ ; do
   echo ===============================
   cd "$d"
   terraform init
+  terraform fmt 
   terraform fmt -check
   terraform validate
   terraform-docs markdown . --output-file README.md
