@@ -26,3 +26,7 @@ variable "table_arn" {
   type        = string
   description = "ARN of DynamoDB table"
 }
+
+variable "policy_file" {
+  
+}

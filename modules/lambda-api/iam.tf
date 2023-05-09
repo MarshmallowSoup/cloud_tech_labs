@@ -18,45 +18,6 @@ resource "aws_iam_policy" "dynamodb_crud_policy" {
   path        = "/"
   description = "DynamoDBCrudPolicy"
 
-  policy = <<EOF
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-            "dynamodb:GetItem",
-            "dynamodb:DeleteItem",
-            "dynamodb:PutItem",
-            "dynamodb:Scan",
-            "dynamodb:Query",
-            "dynamodb:UpdateItem",
-            "dynamodb:BatchWriteItem",
-            "dynamodb:BatchGetItem",
-            "dynamodb:DescribeTable",
-            "dynamodb:ConditionCheckItem"
-            ],
-            "Resource": [
-            {
-                "Fn::Sub": [
-                "${var.table_arn}",
-                {
-                    "tableName": {
-                    "Ref": "TableName"
-                    }
-                }
-                ]
-            },
-            {
-                "Fn::Sub": [
-                "${var.table_arn}/index/*",
-                {
-                    "tableName": {
-                    "Ref": "TableName"
-                    }
-                }
-                ]
-            }
-            ]
-        }
-        ]
-    EOF
+  policy = var.policy_file
+
 }

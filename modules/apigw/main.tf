@@ -41,27 +41,27 @@ resource "aws_api_gateway_integration" "get_items_integration" {
   rest_api_id             = aws_api_gateway_rest_api.lambda_api.id
   resource_id             = aws_api_gateway_resource.crud_paths[count.index].id
   http_method             = aws_api_gateway_method.get_items[count.index].http_method
-  integration_http_method = "POST"
+  integration_http_method = "GET"
   type                    = "AWS_PROXY"
   uri                     = var.lambdas_invocation_arn[count.index]
 }
 
-resource "aws_api_gateway_method" "delete_items" {
+resource "aws_api_gateway_method" "put_items" {
   count = length(var.db_path_part)
 
   rest_api_id   = aws_api_gateway_rest_api.lambda_api.id
   resource_id   = aws_api_gateway_resource.crud_paths[count.index].id
-  http_method   = "GET"
+  http_method   = "PUT"
   authorization = "NONE"
 }
 
 
-resource "aws_api_gateway_integration" "delete_items_integration" {
+resource "aws_api_gateway_integration" "put_items_integration" {
   count = length(var.db_path_part)
 
   rest_api_id             = aws_api_gateway_rest_api.lambda_api.id
   resource_id             = aws_api_gateway_resource.crud_paths[count.index].id
-  http_method             = aws_api_gateway_method.get_items[count.index].http_method
+  http_method             = aws_api_gateway_method.put_items[count.index].http_method
   integration_http_method = "POST"
   type                    = "AWS_PROXY"
   uri                     = var.lambdas_invocation_arn[count.index]
