@@ -31,3 +31,5 @@ override.tf.json
 
 package-lock.json
 *.zip
+
+**/node_modules
