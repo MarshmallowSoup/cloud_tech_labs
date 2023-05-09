@@ -61,4 +61,6 @@ module "api_gw" {
   context                = module.naming.context
   db_path_part           = [lower(module.courses_table.table_name), lower(module.authors_table.table_name)]
   lambdas_invocation_arn = [module.courses_lambda.invocation_arn, module.authors_lambda.invocation_arn]
+
+  depends_on = [ module.authors_lambda, module.courses_lambda ]
 }
