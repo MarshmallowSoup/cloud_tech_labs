@@ -7,7 +7,7 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.60.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.67.0 |
 
 ## Modules
 
@@ -35,6 +35,7 @@ No requirements.
 | <a name="input_function_name"></a> [function\_name](#input\_function\_name) | Name of Lambda function | `string` | n/a | yes |
 | <a name="input_handler"></a> [handler](#input\_handler) | Function entrypoint in your code. | `string` | `""` | no |
 | <a name="input_lambda_zip"></a> [lambda\_zip](#input\_lambda\_zip) | Path to the function's deployment package within the local filesystem | `any` | n/a | yes |
+| <a name="input_policy_file"></a> [policy\_file](#input\_policy\_file) | n/a | `any` | n/a | yes |
 | <a name="input_table_arn"></a> [table\_arn](#input\_table\_arn) | ARN of DynamoDB table | `string` | n/a | yes |
 
 ## Outputs

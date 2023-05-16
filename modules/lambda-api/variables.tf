@@ -28,5 +28,5 @@ variable "table_arn" {
 }
 
 variable "policy_file" {
-  
+
 }

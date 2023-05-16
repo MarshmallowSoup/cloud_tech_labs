@@ -45,7 +45,7 @@ resource "aws_api_gateway_integration" "get_items_integration" {
   type                    = "AWS_PROXY"
   uri                     = var.lambdas_invocation_arn[count.index]
 
-  request_templates       = {
+  request_templates = {
     "application/xml" = <<EOF
       {
         "body" : $input.json('$')
@@ -125,7 +125,7 @@ resource "aws_api_gateway_integration" "get_item_by_id_integration" {
   type                    = "AWS_PROXY"
   uri                     = var.lambdas_invocation_arn[count.index]
 
-  request_templates       = {
+  request_templates = {
     "application/xml" = <<EOF
       {
         "body" : $input.json('$')
@@ -165,7 +165,7 @@ resource "aws_api_gateway_integration" "delete_item_integration" {
   type                    = "AWS_PROXY"
   uri                     = var.lambdas_invocation_arn[count.index]
 
-  request_templates       = {
+  request_templates = {
     "application/xml" = <<EOF
       {
         "body" : $input.json('$')
