@@ -7,7 +7,7 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.67.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.61.0 |
 
 ## Modules
 
@@ -45,7 +45,6 @@ No requirements.
 | <a name="input_context"></a> [context](#input\_context) | Label module context | `any` | n/a | yes |
 | <a name="input_db_path_part"></a> [db\_path\_part](#input\_db\_path\_part) | List of paths to different APIs | `list(string)` | n/a | yes |
 | <a name="input_lambdas_invocation_arn"></a> [lambdas\_invocation\_arn](#input\_lambdas\_invocation\_arn) | ARN to be used for invoking Lambda Function from API Gateway - to be used in aws\_api\_gateway\_integration's uri. | `list(string)` | n/a | yes |
-| <a name="input_name"></a> [name](#input\_name) | Name of API Gateway | `string` | n/a | yes |
 
 ## Outputs
 
