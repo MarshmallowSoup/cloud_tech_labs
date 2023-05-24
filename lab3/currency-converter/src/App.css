@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;1,300&display=swap");
+
+:root {
+  --border_color: cornflowerblue;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+}
+
+.Header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+.header_text {
+  font-size: x-large;
+  font-weight: 300;
+  font-style: italic;
+  height: 60px;
+}
+
+.header_currencies {
+  font-size: large;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: large;
+  font-weight: 500;
+  color: var(--border_color);
+  height: 60px;
+}
+
+.header_currency {
+  width: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.Converter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.converter_text {
+  font-size: medium;
+  height: 60px;
+}
+
+.converter_action_zone {
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  row-gap: 20px;
+}
+
+.converter_select {
+  font-size: medium;
+  background-color: white;
+  border: solid 2px var(--border_color);
+  
+  border-radius: 4px;
+  padding: 10px 30px 10px 10px;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Ctitle%3Edown-arrow%3C%2Ftitle%3E%3Cg%20fill%3D%22%23000000%22%3E%3Cpath%20d%3D%22M10.293%2C3.293%2C6%2C7.586%2C1.707%2C3.293A1%2C1%2C0%2C0%2C0%2C.293%2C4.707l5%2C5a1%2C1%2C0%2C0%2C0%2C1.414%2C0l5-5a1%2C1%2C0%2C1%2C0-1.414-1.414Z%22%20fill%3D%22%23000000%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  background-size: 10px;
+  background-position: calc(100% - 15px) center;
+  background-repeat: no-repeat;
+
+  margin-right: 20px;
+}
+
+.convert_input {
+  font-size: medium;
+  background-color: white;
+  border: solid 2px var(--border_color);
+
+  border-radius: 4px;
+  padding: 10px 10px 10px 10px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
