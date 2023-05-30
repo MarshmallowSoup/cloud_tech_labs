@@ -25,8 +25,9 @@ module "authors_lambda" {
     TABLE_NAME = module.authors_table.table_name
   }
 
-  depends_on = [ null_resource.create_lambda ]
+  policy_file = data.template_file.crud_policy_authors.rendered
 
+  depends_on = [null_resource.create_lambda]
 }
 
 module "courses_lambda" {
@@ -42,8 +43,9 @@ module "courses_lambda" {
     TABLE_NAME = module.courses_table.table_name
   }
 
-  depends_on = [ null_resource.create_lambda ]
-  
+  policy_file = data.template_file.crud_policy_courses.rendered
+
+  depends_on = [null_resource.create_lambda]
 }
 
 resource "null_resource" "create_lambda" {
