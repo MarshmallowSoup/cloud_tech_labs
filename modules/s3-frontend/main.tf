@@ -43,7 +43,7 @@ resource "aws_s3_bucket_object" "frontend" {
   for_each = var.files
 
   bucket = aws_s3_bucket.frontend_bucket.id
-  key    = each.value
+  key    = replace(each.value, "/[^/]+/[^/]+/", "")
   source = each.value
 
   content_type = "text/html"
@@ -53,7 +53,7 @@ resource "aws_s3_bucket_website_configuration" "frontend" {
   bucket = aws_s3_bucket.frontend_bucket.id
 
   index_document {
-    suffix = "${var.folder_path}/index.html"
+    suffix = "index.html"
   }
 
 }
