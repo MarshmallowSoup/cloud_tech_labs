@@ -10,8 +10,6 @@ resource "aws_s3_bucket_public_access_block" "allow_all" {
 
 resource "aws_s3_bucket" "frontend_bucket" {
   bucket = "${module.labels.id}-frontend"
-
-  tags = module.labels.tags
 }
 
 resource "aws_s3_bucket_policy" "frontend_bucket_policy" {
@@ -43,7 +41,7 @@ resource "aws_s3_bucket_object" "frontend" {
   for_each = var.files
 
   bucket = aws_s3_bucket.frontend_bucket.id
-  key    = replace(each.value, "/[^/]+/[^/]+/", "")
+  key    = each.value#replace(each.value, "/[^/]+/[^/]+/", "") 
   source = each.value
 
   content_type = "text/html"
