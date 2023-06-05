@@ -25,7 +25,7 @@ variable "currency" {
 }
 
 variable "sns_list" {
-  type = list(string)
-  default = [""]
+  type        = list(string)
+  default     = [""]
   description = "Additional SNS topics arn"
 }

@@ -7,11 +7,13 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.1.0 |
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_labels"></a> [labels](#module\_labels) | cloudposse/label/null | n/a |
 
 ## Resources
 
@@ -27,8 +29,9 @@ No modules.
 | <a name="input_aws_account_id"></a> [aws\_account\_id](#input\_aws\_account\_id) | AWS account id | `string` | n/a | yes |
 | <a name="input_context"></a> [context](#input\_context) | Label module context | `any` | n/a | yes |
 | <a name="input_create_sns_topic"></a> [create\_sns\_topic](#input\_create\_sns\_topic) | Creates a SNS Topic if true. | `bool` | `true` | no |
-| <a name="input_currrency"></a> [currrency](#input\_currrency) | Currency which is used for checking billing | `string` | `"USD"` | no |
+| <a name="input_currency"></a> [currency](#input\_currency) | Currency which is used for checking billing | `string` | `"USD"` | no |
 | <a name="input_monthly_billing_threshold"></a> [monthly\_billing\_threshold](#input\_monthly\_billing\_threshold) | The threshold for which estimated monthly charges will trigger the metric alarm. | `string` | n/a | yes |
+| <a name="input_sns_list"></a> [sns\_list](#input\_sns\_list) | Additional SNS topics arn | `list(string)` | <pre>[<br>  ""<br>]</pre> | no |
 
 ## Outputs
 

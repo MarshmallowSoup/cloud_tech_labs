@@ -29,7 +29,7 @@ resource "null_resource" "create_lambda" {
     }  
 }
 
-resource "aws_sns_topic_subscription" "user_updates_lampda_target" {
+resource "aws_sns_topic_subscription" "sns_to_slack" {
   topic_arn = module.billng_alert.sns_topic_arn[0]
   protocol  = "lambda"
   endpoint  = module.slack_lambda.lambda_arn
