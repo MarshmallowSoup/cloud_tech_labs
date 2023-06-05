@@ -18,8 +18,14 @@ variable "aws_account_id" {
   description = "AWS account id"
 }
 
-variable "currrency" {
+variable "currency" {
   type        = string
   default     = "USD"
   description = "Currency which is used for checking billing"
+}
+
+variable "sns_list" {
+  type = list(string)
+  default = [""]
+  description = "Additional SNS topics arn"
 }

@@ -5,5 +5,5 @@ output "role_arn" {
 
 output "lambda_arn" {
   description = "Amazon Resource Name (ARN) identifying your Lambda Function."
-  value       = aws_lambda_function.serverless-api.invoke_arn
+  value       = aws_lambda_function.slack_notify.invoke_arn
 }
