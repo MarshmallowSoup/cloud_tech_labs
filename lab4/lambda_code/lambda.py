@@ -1,9 +1,10 @@
 
 import urllib3
 import json
+import os
 
 
-slack_url = "https://hooks.slack.com/services/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"
+slack_url = os.environ.get('SLACK_URL')
 http = urllib3.PoolManager()
 
 
