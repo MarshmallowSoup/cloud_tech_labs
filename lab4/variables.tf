@@ -10,5 +10,5 @@ variable "delimiter" {
 
 variable "environment" {
   type    = string
-  default = "lab1"
+  default = "lab4"
 }

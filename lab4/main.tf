@@ -18,6 +18,11 @@ module "slack_lambda" {
 
 module "billng_alert" {
   source = "../modules/billing_alert"
+
+  context = module.naming.context
+  monthly_billing_threshold = "200"
+  currrency = "USD"
+  aws_account_id = "073240252659"
 }
 
 resource "null_resource" "create_lambda" {

@@ -18,7 +18,6 @@ resource "aws_cloudwatch_metric_alarm" "account_billing_alarm" {
   tags = module.labels.tags
 }
 
-
 # SNS Topic
 resource "aws_sns_topic" "sns_alert_topic" {
   count = var.create_sns_topic ? 1 : 0
