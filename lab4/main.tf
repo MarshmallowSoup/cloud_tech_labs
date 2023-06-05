@@ -7,7 +7,7 @@ module "slack_lambda" {
   table_arn     = module.courses_table.table_arn
 
   env_var = {
-    SLACK_URL = module.courses_table.table_name
+    SLACK_URL = "<slack url>"
   }
 
   policy_file = data.template_file.crud_policy_courses.rendered
