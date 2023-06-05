@@ -8,5 +8,5 @@ variable "folder_path" {
 }
 
 variable "files" {
-  
+
 }

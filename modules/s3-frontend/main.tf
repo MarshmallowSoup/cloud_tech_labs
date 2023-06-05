@@ -1,5 +1,5 @@
 resource "aws_s3_bucket_public_access_block" "allow_all" {
-  
+
   bucket = aws_s3_bucket.frontend_bucket.id
 
   block_public_acls       = false
@@ -33,19 +33,19 @@ resource "aws_s3_bucket_policy" "frontend_bucket_policy" {
       ]
     }
     EOF
-  
-  depends_on = [ aws_s3_bucket_public_access_block.allow_all ]
+
+  depends_on = [aws_s3_bucket_public_access_block.allow_all]
 }
 
 resource "aws_s3_bucket_object" "frontend" {
   for_each = var.files
 
   bucket = aws_s3_bucket.frontend_bucket.id
-  key    = each.value#replace(each.value, "/[^/]+/[^/]+/", "") 
+  key    = each.value #replace(each.value, "/[^/]+/[^/]+/", "") 
   source = each.value
 
   content_type = "text/html"
-  }
+}
 
 resource "aws_s3_bucket_website_configuration" "frontend" {
   bucket = aws_s3_bucket.frontend_bucket.id
